@@ -6,7 +6,7 @@ from itertools import combinations
 if __name__=='__main__':
     spark = SparkSession.builder.getOrCreate()
     sc = spark.sparkContext
-    lines=sc.textFile('./data/browsing.txt')
+    lines=sc.textFile('../data/browsing.txt')
 
     frequent_items=lines.flatMap(lambda l:l.split()).map(lambda ele:(ele,1)).\
         reduceByKey(lambda e1,e2:e1+e2).filter(lambda x:x[1]>=100)

@@ -30,8 +30,8 @@ If you run successfully the setup stage, you are ready to work with the **3 Mill
 In this Colab, we will be working only with a small training dataset (~131K orders) to perform fast Frequent Pattern Mining with the FP-Growth algorithm.
 """
 
-products = spark.read.csv('./data/products.csv', header=True, inferSchema=True)
-orders = spark.read.csv('./data/order_products__train.csv', header=True, inferSchema=True)
+products = spark.read.csv('../data/products.csv', header=True, inferSchema=True)
+orders = spark.read.csv('../data/order_products__train.csv', header=True, inferSchema=True)
 
 products.printSchema()
 

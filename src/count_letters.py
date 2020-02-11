@@ -7,7 +7,7 @@ if __name__=='__main__':
     spark = SparkSession.builder.getOrCreate()
     sc = spark.sparkContext
 
-    documents = sc.textFile('./data/pg100.txt')
+    documents = sc.textFile('../data/pg100.txt')
 
     counts = documents.flatMap(lambda line: line.split()).filter(lambda word: word.isalpha()) \
         .map(lambda word: word[0].lower()) \

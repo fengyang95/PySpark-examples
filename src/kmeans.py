@@ -56,10 +56,10 @@ if __name__ == "__main__":
 
     spark = SparkSession.builder.getOrCreate()
     sc = spark.sparkContext
-    dataset = sc.textFile("./data/data.txt")
+    dataset = sc.textFile("../data/data.txt")
     dataset=dataset.map(line2point)
-    init_centers_1 = get_init_centers("./data/c1.txt")
-    init_centers_2 = get_init_centers("./data/c2.txt")
+    init_centers_1 = get_init_centers("../data/c1.txt")
+    init_centers_2 = get_init_centers("../data/c2.txt")
 
     # euclidean c1
     kmeans_1=KMeans(max_iter=20,init_centers=init_centers_1,distance_func=euclidean_distance)

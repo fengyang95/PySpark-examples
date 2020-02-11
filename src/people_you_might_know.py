@@ -23,7 +23,7 @@ def map_finaldataset(elem):
 if __name__ == "__main__":
     spark = SparkSession.builder.getOrCreate()
     sc = spark.sparkContext
-    dataset = sc.textFile("./data/soc-LiveJournal1Adj.txt")
+    dataset = sc.textFile("../data/soc-LiveJournal1Adj.txt")
 
     dataset = dataset.map(line2dataset)
 

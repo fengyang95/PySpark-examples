@@ -1,5 +1,3 @@
-# standford cs246 winter 2020 colab 1
-
 from pyspark.sql import *
 from pyspark.sql.functions import collect_list,avg
 from nltk.stem.porter import PorterStemmer
@@ -63,9 +61,9 @@ def extrac_movie_features(movie):
 if __name__=='__main__':
 
     spark = SparkSession.builder.getOrCreate()
-    movies_df=spark.read.csv('./data/movielens/movies.csv',header=True)
-    tags_df=spark.read.csv('./data/movielens/tags.csv',header=True)
-    ratings_df=spark.read.csv('./data/movielens/ratings.csv',header=True)
+    movies_df=spark.read.csv('../data/movielens/movies.csv',header=True)
+    tags_df=spark.read.csv('../data/movielens/tags.csv',header=True)
+    ratings_df=spark.read.csv('../data/movielens/ratings.csv',header=True)
     # deal with movies
     movies_df = movies_df.rdd.map(extrac_movie_features).toDF(['movieId', 'year', 'titles_words', 'genres_words'])
     movies_df.show()
